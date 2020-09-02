@@ -1,16 +1,13 @@
-{
-  "family": "nginx",
-  "containerDefinitions": [
-    {
-      "name": "nginx",
-      "image": "nginx:alpine",
-      "memory": 128,
-      "portMappings": [
-        {
-          "containerPort": 80,
-          "protocol": "tcp"
-        }
-      ]    
-    }
-  ]
-}
+[
+  {
+    "name": "hello-world",
+    "image": "hello-world:latest",
+    "memory": 128,
+    "portMappings": [
+      {
+        "containerPort": 8080,
+        "protocol": "tcp"
+      }
+    ]
+  }
+]

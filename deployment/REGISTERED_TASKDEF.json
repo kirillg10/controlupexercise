@@ -1,0 +1,32 @@
+{
+    "taskDefinition": {
+        "status": "ACTIVE", 
+        "family": "nginx", 
+        "placementConstraints": [], 
+        "compatibilities": [
+            "EC2"
+        ], 
+        "volumes": [], 
+        "taskDefinitionArn": "arn:aws:ecs:us-east-1:116886247553:task-definition/nginx:6", 
+        "containerDefinitions": [
+            {
+                "environment": [], 
+                "name": "hello-world", 
+                "mountPoints": [], 
+                "image": "hello-world:latest", 
+                "cpu": 0, 
+                "portMappings": [
+                    {
+                        "protocol": "tcp", 
+                        "containerPort": 80, 
+                        "hostPort": 0
+                    }
+                ], 
+                "memory": 128, 
+                "essential": true, 
+                "volumesFrom": []
+            }
+        ], 
+        "revision": 6
+    }
+}

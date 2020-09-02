@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "hello-world",
-      "image": @VERSION@,
+      "image": "hello-world:latest",
       "memory": 128,
       "portMappings": [
         {

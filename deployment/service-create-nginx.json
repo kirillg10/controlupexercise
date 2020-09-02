@@ -1,16 +1,16 @@
 {
-    "cluster": "test",
-    "serviceName": "nginx",
-    "taskDefinition": "@@TASKDEFINITION_ARN@@",
+    "cluster": "kiril-ecs",
+    "serviceName": "hello-world",
+    "taskDefinition": "arn:aws:ecs:eu-west-1:116886247553:task-definition/hello-world:1",
     "loadBalancers": [
         {
-            "targetGroupArn": "@@TARGET_GROUP_ARN@@",
-            "containerName": "nginx",
-            "containerPort": 80
+            "targetGroupArn": "arn:aws:elasticloadbalancing:eu-west-1:116886247553:targetgroup/kiril-ecs-kiril-ecs-default/0c67d266dcb6103d",
+            "containerName": "hello-world",
+            "containerPort": 8080
         }
     ],
     "desiredCount": 1,
-    "role": "/ecs/test_ecs_lb_role",
+    "role": "/ecs/kiril-ecs_ecs_lb_role",
     "deploymentConfiguration": {
         "maximumPercent": 100,
         "minimumHealthyPercent": 0
