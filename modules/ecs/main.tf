@@ -32,3 +32,26 @@ module "ecs_instances" {
 resource "aws_ecs_cluster" "cluster" {
   name = var.cluster
 }
+
+resource "aws_ecs_task_definition" "service" {
+  family = "service"
+  container_definitions = file("${path.module}/td-nginx.json")
+}
+
+resource "aws_ecs_service" "hello-world" {
+  name            = "hello-world"
+  cluster         = aws_ecs_cluster.cluster.id
+  task_definition = aws_ecs_task_definition.service.arn
+  desired_count   = 1
+  iam_role        = aws_iam_role.ecs_service.arn
+
+
+  load_balancer {
+    target_group_arn = module.alb.default_alb_target_group_arn
+    container_name   = "hello-world"
+    container_port   = 8080
+  }
+
+  depends_on = ["module.alb"]
+
+}

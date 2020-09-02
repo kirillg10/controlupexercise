@@ -1,16 +1,13 @@
-{
-  "family": "nginx",
-  "containerDefinitions": [
+[
     {
       "name": "hello-world",
-      "image": @VERSION@,
+      "image": "heroku/nodejs-hello-world",
       "memory": 128,
       "portMappings": [
         {
-          "containerPort": 80,
+          "containerPort": 8080,
           "protocol": "tcp"
         }
-      ]    
+      ]
     }
-  ]
-}
+]

@@ -1,6 +1,6 @@
 {
-    "cluster": "test",
-    "service": "nginx",
+    "cluster": "kiril-ecs",
+    "service": "hello-world",
     "taskDefinition": "@@TASKDEFINITION_ARN@@",
     "desiredCount": 1,
     "deploymentConfiguration": {
